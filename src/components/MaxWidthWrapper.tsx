@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 
 type MaxWidthWrapperProps = {
   className?: string
-  children: React.ReactNode
+  children?: React.ReactNode
   [key: string]: any
 }
 

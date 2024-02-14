@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
+import Cart from '@/components/Cart';
+import { Icons } from '@/components/Icons';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-
-import { Icons } from './Icons';
-import NavItems from './NavItems';
-import ShouldRender from './ShouldRender';
-import { buttonVariants } from './ui/button';
+import NavItems from '@/components/NavItems';
+import ShouldRender from '@/components/ShouldRender';
+import { buttonVariants } from '@/components/ui/button';
 
 function Navbar() {
   const user = null;
@@ -57,7 +57,9 @@ function Navbar() {
                     </div>
                   </ShouldRender>
 
-                  <div className="ml-4 flow-root lg:ml-6">{/* TODO: Cart */}</div>
+                  <div className="ml-4 flow-root lg:ml-6">
+                    <Cart />
+                  </div>
                 </div>
               </div>
             </div>

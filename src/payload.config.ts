@@ -1,5 +1,6 @@
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { postgresAdapter } from "@payloadcms/db-postgres";
 import { slateEditor } from "@payloadcms/richtext-slate";
 import dotenv from "dotenv";
 import path from "path";
@@ -16,7 +17,7 @@ dotenv.config({
 });
 
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "",
+  serverURL: process.env.VERCEL_URL || process.env.NEXT_PUBLIC_SERVER_URL || "",
   collections: [Users],
   routes: {
     admin: "/sell",
@@ -29,13 +30,21 @@ export default buildConfig({
       favicon: "/favicon.ico",
       ogImage: "/thumbnail.jpg",
     },
+    buildPath: path.resolve(__dirname, "../dist/admin"),
   },
   rateLimit: {
     max: 2000,
   },
   editor: slateEditor({}),
-  db: mongooseAdapter({
-    url: process.env.MONGODB_URL!,
+  // db: mongooseAdapter({
+  //   url: process.env.MONGODB_URL!,
+  // }),
+  db: postgresAdapter({
+    // Postgres-specific arguments go here.
+    // `pool` is required.
+    pool: {
+      connectionString: process.env.DATABASE_URI,
+    },
   }),
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),

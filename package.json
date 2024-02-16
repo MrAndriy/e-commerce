@@ -15,7 +15,8 @@
     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
     "lint": "next lint --fix",
     "prettier": "prettier --write ./src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "vercel-build": "echo hello"
   },
   "resolutions": {
     "cliui": "7.0.2"

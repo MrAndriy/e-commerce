@@ -2,7 +2,7 @@
   "name": "ecomerce-joshua",
   "version": "0.1.0",
   "private": true,
-  "main": "dist/server.js",
+  "main": "src/server.ts",
   "scripts": {
     "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
     "generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types",
@@ -16,6 +16,7 @@
     "lint": "next lint --fix",
     "prettier": "prettier --write ./src",
     "prepare": "husky install",
+    "start:ts": "ts-node --project tsconfig.server.json src/server.ts",
     "vercel-build": "echo hello"
   },
   "resolutions": {

@@ -1,46 +1,44 @@
 export const PRODUCT_CATEGORIES = [
   {
-    id: '1',
     label: 'UI Kits',
     value: 'ui_kits' as const,
     featured: [
       {
         name: 'Editor picks',
-        href: '#',
-        imageSrc: '/nav/ui-kits/mixed.jpg'
+        href: `/products?category=ui_kits`,
+        imageSrc: '/nav/ui-kits/mixed.jpg',
       },
       {
         name: 'New Arrivals',
-        href: '#',
-        imageSrc: '/nav/ui-kits/blue.jpg'
+        href: '/products?category=ui_kits&sort=desc',
+        imageSrc: '/nav/ui-kits/blue.jpg',
       },
       {
         name: 'Bestsellers',
-        href: '#',
-        imageSrc: '/nav/ui-kits/purple.jpg'
-      }
-    ]
+        href: '/products?category=ui_kits',
+        imageSrc: '/nav/ui-kits/purple.jpg',
+      },
+    ],
   },
   {
-    id: '2',
     label: 'Icons',
-    value: 'Icons' as const,
+    value: 'icons' as const,
     featured: [
       {
         name: 'Favorite Icon Picks',
-        href: '#',
-        imageSrc: '/nav/icons/picks.jpg'
+        href: `/products?category=icons`,
+        imageSrc: '/nav/icons/picks.jpg',
       },
       {
         name: 'New Arrivals',
-        href: '#',
-        imageSrc: '/nav/icons/new.jpg'
+        href: '/products?category=icons&sort=desc',
+        imageSrc: '/nav/icons/new.jpg',
       },
       {
-        name: 'Bestselling icons',
-        href: '#',
-        imageSrc: '/nav/icons/bestsellers.jpg'
-      }
-    ]
-  }
-];
+        name: 'Bestselling Icons',
+        href: '/products?category=icons',
+        imageSrc: '/nav/icons/bestsellers.jpg',
+      },
+    ],
+  },
+]
